@@ -4,6 +4,7 @@ public class mainSPBU {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         AntrianKendaraan antrian = new AntrianKendaraan(10);
+        Transaksi transaksi = new Transaksi(antrian, null, 0, 0);
         
         int pilihan;
         do {
@@ -42,7 +43,20 @@ public class mainSPBU {
                     antrian.tampilJumlahAntrian();
                     break;
                 case 4:
-
+                    Kendaraan dilayani = antrian.kurangKendaraan();
+                    if (dilayani != null) {
+                        dilayani.getPlatNomor();
+                        System.out.print("Masukkan Jenis BBM: ");
+                        String bbm = scanner.nextLine();
+                        System.out.print("Masukkan Harga per liter: ");
+                        int harga = scanner.nextInt();
+                        System.out.print("Masukkan Jumlah liter: ");
+                        int liter = scanner.nextInt();
+                        scanner.nextLine();
+                        Transaksi t = new Transaksi(antrian, bbm, harga, liter);
+                        transaksi.tambahTransaksi(t);
+                        System.out.println(">> Transaksi berhasil dicatat.");
+                    }
                     break;
                 case 5:
 

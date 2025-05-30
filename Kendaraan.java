@@ -14,4 +14,8 @@ public class Kendaraan {
         System.out.println("Tipe: "+tipe);
         System.out.println("Merk: "+merk);
     }
+
+    public void getPlatNomor() {
+        System.out.println("Petugas melayani " + platNomor);
+    }
 }
