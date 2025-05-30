@@ -34,11 +34,12 @@ public class mainSPBU {
                     break;
                     
                 case 2:
+                    System.out.println("--- Antrian Kendaraan ---");
                     antrian.tampilkanAntrian();
                     break;
                     
                 case 3:
-                    
+                    antrian.tampilJumlahAntrian();
                     break;
                 case 4:
 
