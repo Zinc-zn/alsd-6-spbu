@@ -25,21 +25,6 @@ public class AntrianKendaraan {
         }
     }
 
-    public Kendaraan kurangKendaraan() {
-        if (isEmpty()) {
-            System.out.println("Antrian kosong!");
-            return null;
-        } else {
-            Kendaraan keluar = queue[front];
-            if (front == rear) {
-                front = rear = -1;
-            } else {
-                front++;
-            }
-            return keluar;
-        }
-    }
-
     public void tampilkanAntrian() {
         if (isEmpty()) {
             System.out.println("Antrian kosong!");
@@ -69,8 +54,7 @@ public class AntrianKendaraan {
             System.out.println("Antrian Kosong!");
             return;
         } else {
-            int jumlah = rear - front + 1;
-            System.out.println(">> Jumlah Kendaraan di Antrian: " + jumlah);
+            System.out.println(">> Jumlah Kendaraan di Antrian: " + size);
         }
     }
 
