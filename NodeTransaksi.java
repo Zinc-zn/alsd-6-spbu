@@ -1,8 +1,8 @@
 public class NodeTransaksi {
-    Transaksi data;
+    TransaksiPengisian data;
     NodeTransaksi next;
 
-    public NodeTransaksi(Transaksi data, NodeTransaksi next) {
+    public NodeTransaksi(TransaksiPengisian data, NodeTransaksi next) {
         this.data = data;
         this.next = null;
     }
