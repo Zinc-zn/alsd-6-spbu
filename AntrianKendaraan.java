@@ -43,4 +43,13 @@ public class AntrianKendaraan {
     public boolean isEmpty() {
         return size == 0;
     }
+
+    public void tampilJumlahAntrian() {
+        if (isEmpty()) {
+            System.out.println("Antrian Kosong!");
+        } else {
+            int jumlah = rear - front + 1;
+            System.out.println(">> Jumlah Kendaraan di Antrian: " + jumlah);
+        }
+    }
 }
