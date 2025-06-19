@@ -3,7 +3,10 @@ import java.util.Scanner;
 public class mainSPBU {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        AntrianKendaraan antrian = new AntrianKendaraan(3);
+        System.out.print("Masukkan Kapasitas Antrian Kendaraan: ");
+        int kapasitas = scanner.nextInt();
+        scanner.nextLine();
+        AntrianKendaraan antrian = new AntrianKendaraan(kapasitas);
         TransaksiLinkedList transaksiLL = new TransaksiLinkedList();
         int pilihan;
         do {
@@ -28,8 +31,10 @@ public class mainSPBU {
                     String tipe = scanner.nextLine();
                     System.out.print("Masukkan Merk: ");
                     String merk = scanner.nextLine();
+                    System.out.print("Apakah kendaraan VIP (true/false): "); // tambahkan atribut VIP
+                    boolean vip = scanner.nextBoolean();
 
-                    Kendaraan kendaraanBaru = new Kendaraan(plat, tipe, merk);
+                    Kendaraan kendaraanBaru = new Kendaraan(plat, tipe, merk, vip);
                     antrian.tambahKendaraan(kendaraanBaru);
                     break;
 

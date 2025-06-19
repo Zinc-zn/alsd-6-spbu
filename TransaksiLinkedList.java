@@ -7,12 +7,17 @@ public class TransaksiLinkedList {
 
     public void add(TransaksiPengisian input) {
         NodeTransaksi ndInput = new NodeTransaksi(input, null);
-        if (isEmpty()) {
+        if (isEmpty()) { // jika masih kosong akan tetap jadi yang terdepan tidak peduli vip atau bukan
             head = ndInput;
             tail = ndInput;
         } else {
-            tail.next = ndInput;
-            tail = ndInput;
+            if (input.kendaraan.isVIP) { // cek apakah vip, jika iya add first
+                ndInput.next = head;
+                head = ndInput;
+            } else { // jika bukan vip add last
+                tail.next = ndInput;
+                tail = ndInput;
+            }
         }
     }
 
